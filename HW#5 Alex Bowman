@@ -1,0 +1,41 @@
+/* Alex Bowman
+ * Professor Silvestri
+ * HW#5 check SSN
+ * 10/15
+ * Enter the SSN as a String.
+ * An SSN can have OPTIONAL HYPHENS!
+ *  123456789 and 123-45-6789 are both valid SSNs.
+ */
+import java.util.Scanner;
+
+public class SSN {
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Enter a Social Security Number. Hyphens are optional.");
+		String SSN = input.next();
+
+		if ((SSN.charAt(3) == '-' && SSN.charAt(6) == '-') && (SSN.length() == 11)) {
+			if (Character.isDigit(SSN.charAt(0)) && Character.isDigit(SSN.charAt(1)) && Character.isDigit(SSN.charAt(2))
+					&& Character.isDigit(SSN.charAt(4)) && Character.isDigit(SSN.charAt(5))
+					&& Character.isDigit(SSN.charAt(7)) && Character.isDigit(SSN.charAt(8))
+					&& Character.isDigit(SSN.charAt(9)) && Character.isDigit(SSN.charAt(10)))
+
+				System.out.println("Valid SSN");
+
+		}
+
+		else if (SSN.length() == 9) {
+			if (Character.isDigit(SSN.charAt(0)) && Character.isDigit(SSN.charAt(1)) && Character.isDigit(SSN.charAt(2))
+					&& Character.isDigit(SSN.charAt(3)) && Character.isDigit(SSN.charAt(4))
+					&& Character.isDigit(SSN.charAt(5)) && Character.isDigit(SSN.charAt(6))
+					&& Character.isDigit(SSN.charAt(7)) && Character.isDigit(SSN.charAt(8)))
+
+				System.out.println("Valid Social Security Number");
+		} else {
+			System.out.println("invalid SSN");
+
+		}
+	}
+}
